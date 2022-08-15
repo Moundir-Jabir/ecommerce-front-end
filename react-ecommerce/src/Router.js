@@ -1,9 +1,13 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { isAuthentificated } from './auth/helpers'
+import { isAuthentificated, isAdmin } from './auth/helpers'
+import AddCategory from './pages/admin/categories/AddCategory'
+import AddProduct from './pages/admin/product/AddProduct'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Dashboard from './pages/users/Dashboard'
+import ProductDetails from './pages/users/ProductDetails'
+import Shop from './pages/users/Shop'
 import Signin from './pages/users/Signin'
 import Signup from './pages/users/Signup'
 
@@ -12,9 +16,13 @@ const Router = () => {
         <Routes>
             <Route path='/' element={<Navigate to="/home" />} />
             <Route path='/home' element={isAuthentificated() ? <Home /> : <Navigate to="/signin" />} />
+            <Route path='/shop' element={isAuthentificated() ? <Shop /> : <Navigate to="/signin" />} />
+            <Route path='/productDetails/:id' element={isAuthentificated() ? <ProductDetails /> : <Navigate to="/signin" />} />
             <Route path='/dashboard' element={isAuthentificated() ? <Dashboard /> : <Navigate to="/signin" />} />
             <Route path='/signin' element={isAuthentificated() ? <Navigate to="/home" /> : <Signin />} />
             <Route path='/signup' element={isAuthentificated() ? <Navigate to="/home" /> : <Signup />} />
+            <Route path='/category/create' element={isAdmin() ? <AddCategory /> : <Navigate to="/home" />} />
+            <Route path='/product/create' element={isAdmin() ? <AddProduct /> : <Navigate to="/home" />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
     )

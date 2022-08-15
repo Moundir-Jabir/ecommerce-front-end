@@ -5,3 +5,11 @@ export const isAuthentificated = () => {
         return JSON.parse(user)
     return false
 }
+
+export const isAdmin = () => {
+    let user = isAuthentificated()
+    if(user)
+        if(user.role == 1)
+            return true
+    return false
+}

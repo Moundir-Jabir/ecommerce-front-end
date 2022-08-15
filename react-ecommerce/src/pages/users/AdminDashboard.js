@@ -16,7 +16,7 @@ const AdminDashboard = () => {
                             <div className="card-body">
                                 <h5 className="card-title">{role ? 'Admin' : 'Client'} Links</h5>
                                 <ul className="list-group list-group-flush">
-                                    <li className="list-group-item"><Link className='nav-link' to="/categorie/create">Create new categorie</Link></li>
+                                    <li className="list-group-item"><Link className='nav-link' to="/category/create">Create new category</Link></li>
                                     <li className="list-group-item"><Link className='nav-link' to="/product/create">Create new product</Link></li>
                                 </ul>
                             </div>

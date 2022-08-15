@@ -38,6 +38,9 @@ const Navbar = () => {
                                         <NavLink to="/home" className="nav-link" aria-current="page">Home</NavLink>
                                     </li>
                                     <li className="nav-item">
+                                        <NavLink to="/shop" className="nav-link" aria-current="page">Shop</NavLink>
+                                    </li>
+                                    <li className="nav-item">
                                         <NavLink to="/dashboard" className="nav-link" aria-current="page">Dashboard</NavLink>
                                     </li>
                                 </Fragment>
