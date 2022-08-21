@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Layout from '../components/Layout'
 
 const NotFound = () => {
   return (
-    <div>NotFound</div>
+    <Layout title="Page not found" classname="container">
+      <Link to="/"> <span>return to home page</span> </Link>
+    </Layout>
   )
 }
 

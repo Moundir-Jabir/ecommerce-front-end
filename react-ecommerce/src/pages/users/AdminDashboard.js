@@ -18,6 +18,7 @@ const AdminDashboard = () => {
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item"><Link className='nav-link' to="/category/create">Create new category</Link></li>
                                     <li className="list-group-item"><Link className='nav-link' to="/product/create">Create new product</Link></li>
+                                    <li className="list-group-item"><Link className='nav-link' to="/orders">View all orders</Link></li>
                                 </ul>
                             </div>
                         </div>

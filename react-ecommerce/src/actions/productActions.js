@@ -12,3 +12,7 @@ export const getOneProduct = (id) => {
 export const getFilterProducts = (filters, skip, limit, sortBy="", order="") => {
     return axios.post(`${API_URL}/products/search?sortBy=${sortBy}&order=${order}&limit=${limit}`, {filters, skip})
 }
+
+export const getRelatedProducts = (id) => {
+    return axios.get(`${API_URL}/products/related/${id}`)
+}
