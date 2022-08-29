@@ -5,8 +5,10 @@ import axios from 'axios'
 import toastr from 'toastr'
 import 'toastr/build/toastr.css'
 import { useNavigate } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { login } from '../../redux/actions/authActions'
 
-const Signin = () => {
+const Signin = (props) => {
 
   const navigate = useNavigate()
 
@@ -21,9 +23,8 @@ const Signin = () => {
         toastr.success('User logged successfuly', 'Login', {
           positionClass: "toast-bottom-left"
         })
-        localStorage.setItem('user_info', JSON.stringify(res.data.user))
-        localStorage.setItem('token', JSON.stringify(res.data.token))
-        navigate('/home')
+        props.login(res.data.user, res.data.token)
+        navigate('/dashboard')
       })
       .catch((err) => {
         if (err.response.data.erreur) {
@@ -68,4 +69,8 @@ const Signin = () => {
   )
 }
 
-export default Signin
+const mapStateToProps = (state) => ({})
+
+const mapDispatchToProps = {login}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signin)

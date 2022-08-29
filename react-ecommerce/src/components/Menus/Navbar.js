@@ -6,6 +6,7 @@ import toastr from 'toastr'
 import 'toastr/build/toastr.css'
 import { isAuthentificated } from '../../auth/helpers'
 import { connect } from 'react-redux'
+import { logout } from '../../redux/actions/authActions'
 
 const Navbar = (props) => {
 
@@ -17,8 +18,7 @@ const Navbar = (props) => {
                 toastr.success('Logout successefuly', 'Logout', {
                     positionClass: "toast-bottom-left"
                 })
-                localStorage.removeItem('user_info')
-                localStorage.removeItem('token')
+                props.logout()
                 navigate('/signin')
             })
     }
@@ -83,6 +83,6 @@ const mapStateToProps = (state) => ({
     cartSize: state.cart.products.length
 })
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {logout}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
