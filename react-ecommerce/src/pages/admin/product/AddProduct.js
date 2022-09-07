@@ -7,7 +7,7 @@ import { API_URL } from '../../../config'
 
 const AddProduct = () => {
 
-    const [product, setProduct] = useState({ name: "", photo: "", quantity: 0, price: 0, category: "", shipping: false, description: "" })
+    const [product, setProduct] = useState({ name: "", photo: "", quantity: 0, price: 0, category: "", description: "" })
     const [formData] = useState(new FormData())
     const [categories, setCategories] = useState([])
 
@@ -98,10 +98,10 @@ const AddProduct = () => {
                                     }
                                 </select>
                             </div>
-                            <div className="form-check mb-3">
+                            {/* <div className="form-check mb-3">
                                 <input onChange={handleShipping} {...checkbox} name='shipping' className="form-check-input" type="checkbox" id="shipping" />
                                 <label className="form-check-label" htmlFor='shipping'>Shipping</label>
-                            </div>
+                            </div> */}
                             <div className="mb-3">
                                 <label htmlFor='description' className="form-label">Description</label>
                                 <textarea onChange={update} className="form-control" id="description" name='description' value={description} rows="3"></textarea>

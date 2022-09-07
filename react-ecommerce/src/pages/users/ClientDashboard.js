@@ -33,14 +33,14 @@ const ClientDashboard = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="card">
+                        {/* <div className="card">
                             <div className="card-body">
                                 <h5 className="card-title">Purchase Informations</h5>
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item">history</li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </Layout>
